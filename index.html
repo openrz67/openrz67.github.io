@@ -74,7 +74,7 @@ td:first-child{font-family:ui-monospace,Menlo,monospace;font-size:.9em}
 .warn{border-left:3px solid var(--acc);padding:.6rem 1rem;background:#fff6;margin-top:1.25rem;font-size:.95em}
 .wiring{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1rem}
 
-.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.5rem,2vw,1.25rem);margin-top:2rem}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:clamp(.5rem,2vw,1.25rem);margin-top:2rem}
 .shots figure{margin:0}
 .shots img{border-radius:clamp(8px,2vw,18px);box-shadow:var(--sh);transition:transform var(--t)}
 .shots img:hover{transform:scale(1.02)}
@@ -134,7 +134,7 @@ footer a:hover{text-decoration:underline}
 <div class="links"><a href="https://github.com/openrz67/openrz67-trigger">Repository</a><a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad">PCB files</a><a href="https://github.com/openrz67/openrz67-trigger#ble-protocol">BLE protocol</a></div>
 </article>
 <article class="card">
-<div class="top"><h3>openrz67-android</h3><span class="status ok">v1.0 released</span></div>
+<div class="top"><h3>openrz67-android</h3><span class="status ok" id="av">v1.1 released</span></div>
 <p>Companion app for Android. Finds the trigger automatically, reconnects when the link drops, and puts the three shooting modes one tap away.</p>
 <ul>
 <li>Shutter, bulb and countdown with custom duration</li>
@@ -186,11 +186,12 @@ footer a:hover{text-decoration:underline}
 <section id="app"><div class="wrap">
 <span class="eyebrow">The app</span>
 <h2>Three modes, no menus.</h2>
-<p class="lead">Direct release, countdown, bulb. Switch modes at the top, fire with the big button. That's it.</p>
+<p class="lead">Direct release, countdown, bulb. Switch modes at the top, fire with the big button. Follows your system light or dark theme.</p>
 <div class="shots">
-<figure><img src="img/app-direct.jpg" width="409" height="900" alt="Android app in direct mode with a large shutter button"><figcaption>Direct</figcaption></figure>
-<figure><img src="img/app-countdown.jpg" width="409" height="900" alt="Android app in countdown mode with duration picker"><figcaption>Countdown</figcaption></figure>
-<figure><img src="img/app-bulb.jpg" width="409" height="900" alt="Android app in bulb mode with open and close controls"><figcaption>Bulb</figcaption></figure>
+<figure><img src="img/app-direct.jpg" width="540" height="1188" alt="Android app: Direct mode with the shutter button"><figcaption>Direct</figcaption></figure>
+<figure><img src="img/app-countdown.jpg" width="540" height="1188" alt="Android app: Countdown running"><figcaption>Countdown</figcaption></figure>
+<figure><img src="img/app-bulb.jpg" width="540" height="1188" alt="Android app: Bulb exposure with elapsed time"><figcaption>Bulb</figcaption></figure>
+<figure><img src="img/app-dark.jpg" width="540" height="1188" alt="Android app: Direct mode in dark theme"><figcaption>Dark theme</figcaption></figure>
 </div>
 </div></section>
 
@@ -221,5 +222,6 @@ footer a:hover{text-decoration:underline}
 <span>openrz67 · MIT licensed · not affiliated with Mamiya</span>
 <span><a href="https://github.com/openrz67">github.com/openrz67</a> · <a href="https://github.com/openrz67/openrz67.github.io">edit this page</a></span>
 </div></footer>
+<script>fetch("https://api.github.com/repos/openrz67/openrz67-android/releases/latest").then(r=>r.json()).then(r=>{if(r.tag_name)document.getElementById("av").textContent=r.tag_name+" released"}).catch(()=>{})</script>
 </body>
 </html>
