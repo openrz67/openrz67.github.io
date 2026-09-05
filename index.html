@@ -54,7 +54,7 @@ figcaption{font-size:.85rem;color:var(--mute);margin-top:.75rem;text-align:cente
 .cards{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));margin-top:2rem}
 .card{background:#fff9;border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.25rem,3vw,1.75rem);display:flex;flex-direction:column;gap:.9rem;transition:transform var(--t),box-shadow var(--t)}
 .card:hover{transform:translateY(-3px);box-shadow:var(--sh)}
-.card .top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.card .top{display:flex;flex-direction:column;align-items:flex-start;gap:.6rem}
 .status{font:600 .7rem/1 ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .6rem;border-radius:99px;background:var(--bg2);color:var(--mute);white-space:nowrap}
 .status.ok{background:#e0ecdc;color:#2f5c2a}
 .status.wip{background:#f6e4c8;color:#7a4b0a}
@@ -123,7 +123,7 @@ footer a:hover{text-decoration:underline}
 <p class="lead">Each piece lives in its own repository with its own build instructions, releases and issue tracker. This page is the map.</p>
 <div class="cards">
 <article class="card">
-<div class="top"><h3>openrz67-trigger</h3><span class="status ok">rev 1 in use · rev 2 in design</span></div>
+<div class="top"><h3>openrz67-trigger</h3><span class="status ok">rev 1 works · rev 2 next</span></div>
 <p>ESP32-C3 firmware and a custom PCB. Two isolated PhotoMOS channels close the camera's S1/S2 contacts. Runs off a 250 mAh LiPo with light sleep and 0 dBm BLE for long standby.</p>
 <ul>
 <li>Instant release, bulb mode, configurable countdown</li>
