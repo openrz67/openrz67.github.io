@@ -198,7 +198,7 @@ footer a:hover{text-decoration:underline}
 <section id="start"><div class="wrap">
 <span class="eyebrow">Get started</span>
 <h2>Build one.</h2>
-<p class="lead">This is a hobby project under active development. As of today, if you want one, you'll have to build one yourself. You can either create your own board, or order a batch of the pre-designed PCBs from JLCPCB. Rev 1 boards are fabricated and in regular use. Rev 2 is designed, not yet fabricated, and is what the repo currently ships. Read the trigger README before ordering anything.</p>
+<p class="lead">This is a hobby project under active development. As of today, if you want one, you'll have to build one yourself. You can either create your own board, or order a batch of the pre-designed PCBs from JLCPCB. Rev 1 boards are fabricated and in regular use. Rev 2 boards were ordered in September 2026 and are not yet tested; the repo has since picked up routing fixes that are not on them. Read the trigger README before ordering anything.</p>
 <ol class="steps">
 <li><h3>Get a board</h3><p>Order the PCB from the Gerbers in <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad/out">pcb/kicad/out</a>, or wire a XIAO ESP32C3 and two PhotoMOS relays per the diagram above.</p></li>
 <li><h3>Flash the firmware</h3><p>Clone the trigger repo and run <code>pio run -t upload</code> with PlatformIO. Hold BOOT while resetting if upload doesn't start.</p></li>
@@ -211,7 +211,7 @@ footer a:hover{text-decoration:underline}
 <span class="eyebrow">Roadmap</span>
 <h2>Where it's heading.</h2>
 <ul class="road">
-<li><span class="status wip">next</span><div><strong>Fabricate and test rev 2</strong><p>PhotoMOS relays instead of mechanical, side-entry camera connector, and a print-tested enclosure.</p></div></li>
+<li><span class="status wip">next</span><div><strong>Test rev 2</strong><p>PhotoMOS relays instead of mechanical, side-entry camera connector, and a print-tested enclosure.</p></div></li>
 <li><span class="status plan">planned</span><div><strong>iOS app</strong><p>Same protocol, same three modes. Open to contributors.</p></div></li>
 <li><span class="status plan">ideas</span><div><strong>More of the RZ67 system</strong><p>The remote port is only the first thing on this camera worth opening up.</p></div></li>
 </ul>
