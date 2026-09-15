@@ -47,8 +47,9 @@ nav a:not(.logo):hover{color:var(--ink)}
 .btn.p{background:var(--ink);color:var(--bg)}
 .btn.p:hover{background:var(--acc);border-color:var(--acc);color:#fff}
 .btn:not(.p):hover{background:var(--ink);color:var(--bg)}
-.pcb{border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);background:#fff;padding:1rem;transform:rotate(-1.5deg);transition:transform .4s ease}
-.pcb:hover{transform:rotate(0)}
+.pcb{display:block;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);background:var(--bg2)}
+.hardware{display:grid;gap:1.5rem}
+.pcb-top{background:linear-gradient(145deg,#a5a49f,#cecdca);padding:.75rem}
 figcaption{font-size:.85rem;color:var(--mute);margin-top:.75rem;text-align:center}
 
 .cards{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));margin-top:2rem}
@@ -111,10 +112,16 @@ footer a:hover{text-decoration:underline}
 <p class="lead">A tiny Bluetooth trigger that plugs into the RZ67's electrical remote port, and an Android app to fire it. Instant shutter, bulb exposures and self-timer countdowns, all from your phone. Rev 1 is built and shooting film. Rev 2 is built and verified.</p>
 <div class="cta"><a class="btn p" href="#start">Get started</a><a class="btn" href="https://github.com/openrz67">View on GitHub</a></div>
 </div>
+<div class="hardware">
 <figure>
-<div class="pcb"><img src="img/pcb-top.png" width="1400" height="700" alt="Rendered top view of the openrz67 trigger PCB, rev 2, with ESP32-C3, two PhotoMOS relays and a U.FL antenna connector"></div>
-<figcaption>Trigger PCB, rev 2 · KiCad render</figcaption>
+<a class="pcb" href="img/case-pcb.jpg"><img src="img/case-pcb.jpg" width="1400" height="1400" fetchpriority="high" alt="Exploded CAD view of the OpenRZ67 trigger: engraved lid and light pipe above the rev 2 PCB, with the enclosure base below"></a>
+<figcaption>Case + rev 2 PCB · CAD render<br>Enclosure in development. Battery, switch and wiring omitted.</figcaption>
 </figure>
+<figure>
+<a class="pcb pcb-top" href="img/pcb-top.png"><img src="img/pcb-top.png" width="1400" height="700" alt="Top view of the rev 2 trigger PCB, showing the ESP32-C3, two PhotoMOS relays, USB-C port and camera connector"></a>
+<figcaption>Rev 2 PCB · top view</figcaption>
+</figure>
+</div>
 </section>
 
 <section id="parts"><div class="wrap">
@@ -203,6 +210,7 @@ footer a:hover{text-decoration:underline}
 <li><h3>Get a board</h3><p>Order the PCB from the Gerbers in <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad/out">pcb/kicad/out</a>, or wire a XIAO ESP32C3 and two PhotoMOS relays per the diagram above.</p></li>
 <li><h3>Flash the firmware</h3><p>Clone the trigger repo and run <code>pio run -t upload</code> with PlatformIO. Hold BOOT while resetting if upload doesn't start.</p></li>
 <li><h3>Make the cable</h3><p>Four-pin JST XH to the camera's remote plug. Leave pin 1 unconnected and double-check orientation before you plug it in.</p></li>
+<li><h3>Print the case</h3><p>Get the enclosure files and printing instructions from <a href="https://github.com/openrz67/openrz67-trigger/tree/main/case">case/</a> in the trigger repo. The battery sits under the PCB. Snap fit is still being tuned; read the case README before printing.</p></li>
 <li><h3>Install the app</h3><p>Grab the APK from <a href="https://github.com/openrz67/openrz67-android/releases">releases</a>. Power on the trigger and the app connects on its own.</p></li>
 </ol>
 </div></section>
