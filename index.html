@@ -136,7 +136,6 @@ footer a:hover{text-decoration:underline}
 <li>Instant release, bulb mode, configurable countdown</li>
 <li>KiCad project, Gerbers, BOM and pick-and-place files</li>
 <li>3D-printable enclosure, print-tested and in regular use</li>
-<li>Works on a dev board like the XIAO ESP32C3 too</li>
 </ul>
 <div class="links"><a href="https://github.com/openrz67/openrz67-trigger">Repository</a><a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad">PCB files</a><a href="https://github.com/openrz67/openrz67-trigger#ble-protocol">BLE protocol</a></div>
 </article>
@@ -186,7 +185,7 @@ footer a:hover{text-decoration:underline}
 </div>
 <figure class="wiring">
 <img src="img/wiring.svg" alt="Wiring diagram: ESP32-C3 GPIO 3 and 4 drive two TLP172AM PhotoMOS relays through 220 ohm resistors; their isolated outputs connect S1 and S2 to camera ground">
-<figcaption>Wiring for a dev-board build. On the PCB this is already routed.</figcaption>
+<figcaption>How the two isolated channels reach the camera. On the PCB this is already routed.</figcaption>
 </figure>
 </div>
 </div></section>
@@ -208,7 +207,7 @@ footer a:hover{text-decoration:underline}
 <h2>Build one.</h2>
 <p class="lead">This is a hobby project under active development. As of today, if you want one, you'll have to build one yourself. You can either create your own board, or order a batch of the pre-designed PCBs from JLCPCB. Rev 2 boards are in regular use. Rev 1 is deprecated. The repo has moved on to rev 3 since that batch &mdash; functionally the same board. Read the trigger README before ordering anything.</p>
 <ol class="steps">
-<li><h3>Get a board</h3><p>Order the PCB from the Gerbers in <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad/out">pcb/kicad/out</a>, or wire a XIAO ESP32C3 and two PhotoMOS relays per the diagram above.</p></li>
+<li><h3>Get a board</h3><p>Order the PCB from the Gerbers in <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad/out">pcb/kicad/out</a>.</p></li>
 <li><h3>Flash the firmware</h3><p>Clone the trigger repo and run <code>pio run -t upload</code> with PlatformIO. Hold BOOT while resetting if upload doesn't start.</p></li>
 <li><h3>Make the cable</h3><p>Four-pin JST XH at the board end; at the camera end, four Dupont sleeves in a printed clamshell plug (<code>case/camera_plug.py</code>). Leave pin 1 unconnected and double-check orientation before you plug it in. The cell, switch, antenna and connectors are listed in <a href="https://github.com/openrz67/openrz67-trigger/blob/main/BOM.md">BOM.md</a>.</p></li>
 <li><h3>Print the case</h3><p>Get the enclosure files and printing instructions from <a href="https://github.com/openrz67/openrz67-trigger/tree/main/case">case/</a> in the trigger repo. The battery sits under the PCB. The case is print-tested and in regular use. Read the case README before printing.</p></li>
