@@ -131,7 +131,7 @@ footer a:hover{text-decoration:underline}
 <div class="cards">
 <article class="card">
 <div class="top"><h3>openrz67-trigger</h3><span class="status ok">rev 2 in regular use</span></div>
-<p>ESP32-C3 firmware and a custom PCB. Two isolated PhotoMOS channels close the camera's S1/S2 contacts. Runs off a 250 mAh LiPo with light sleep and 0 dBm BLE for long standby.</p>
+<p>ESP32-C3 firmware and a custom PCB. Two isolated PhotoMOS channels close the camera's S1/S2 contacts. Runs off a 250 mAh LiPo at an 80 MHz clock and 0 dBm BLE for long standby.</p>
 <ul>
 <li>Instant release, bulb mode, configurable countdown</li>
 <li>KiCad project, Gerbers, BOM and pick-and-place files</li>
@@ -152,7 +152,7 @@ footer a:hover{text-decoration:underline}
 </article>
 <article class="card plan">
 <div class="top"><h3>openrz67-ios</h3><span class="status plan">planned</span></div>
-<p>An iPhone app speaking the same BLE protocol. Not started yet. If you want to build it, the protocol is six bytes and fully documented.</p>
+<p>An iPhone app speaking the same BLE protocol. Not started yet. If you want to build it, the protocol is a handful of single-byte commands and fully documented.</p>
 <ul><li>Same feature set as the Android app</li><li>Contributions welcome</li></ul>
 <div class="links"><a href="#roadmap">Roadmap</a></div>
 </article>
@@ -180,6 +180,7 @@ footer a:hover{text-decoration:underline}
 <tr><td>21 / 20</td><td>Start / end bulb</td></tr>
 <tr><td>31 / 30</td><td>Start / cancel 10 s countdown</td></tr>
 <tr><td>3 n 1</td><td>Countdown of <em>n</em> seconds</td></tr>
+<tr><td colspan="2">Rev 3 boards add a read/notify characteristic with the system voltage in millivolts.</td></tr>
 </tbody></table>
 <div class="warn">For bulb exposures set the shutter dial to <strong>B</strong>. The camera closes the shutter on its own after about 60 seconds regardless.</div>
 </div>
@@ -205,11 +206,11 @@ footer a:hover{text-decoration:underline}
 <section id="start"><div class="wrap">
 <span class="eyebrow">Get started</span>
 <h2>Build one.</h2>
-<p class="lead">This is a hobby project under active development. As of today, if you want one, you'll have to build one yourself. You can either create your own board, or order a batch of the pre-designed PCBs from JLCPCB. Rev 2 boards are in regular use. Rev 1 is deprecated. The repo includes small routing fixes made after the September 2026 rev 2 batch was manufactured. Read the trigger README before ordering anything.</p>
+<p class="lead">This is a hobby project under active development. As of today, if you want one, you'll have to build one yourself. You can either create your own board, or order a batch of the pre-designed PCBs from JLCPCB. Rev 2 boards are in regular use. Rev 1 is deprecated. The repo has moved on to rev 3 since that batch &mdash; functionally the same board. Read the trigger README before ordering anything.</p>
 <ol class="steps">
 <li><h3>Get a board</h3><p>Order the PCB from the Gerbers in <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad/out">pcb/kicad/out</a>, or wire a XIAO ESP32C3 and two PhotoMOS relays per the diagram above.</p></li>
 <li><h3>Flash the firmware</h3><p>Clone the trigger repo and run <code>pio run -t upload</code> with PlatformIO. Hold BOOT while resetting if upload doesn't start.</p></li>
-<li><h3>Make the cable</h3><p>Four-pin JST XH to the camera's remote plug. Leave pin 1 unconnected and double-check orientation before you plug it in.</p></li>
+<li><h3>Make the cable</h3><p>Four-pin JST XH at the board end; at the camera end, four Dupont sleeves in a printed clamshell plug (<code>case/camera_plug.py</code>). Leave pin 1 unconnected and double-check orientation before you plug it in. The cell, switch, antenna and connectors are listed in <a href="https://github.com/openrz67/openrz67-trigger/blob/main/BOM.md">BOM.md</a>.</p></li>
 <li><h3>Print the case</h3><p>Get the enclosure files and printing instructions from <a href="https://github.com/openrz67/openrz67-trigger/tree/main/case">case/</a> in the trigger repo. The battery sits under the PCB. The case is print-tested and in regular use. Read the case README before printing.</p></li>
 <li><h3>Install the app</h3><p>Grab the APK from <a href="https://github.com/openrz67/openrz67-android/releases">releases</a>. Power on the trigger and the app connects on its own.</p></li>
 </ol>
