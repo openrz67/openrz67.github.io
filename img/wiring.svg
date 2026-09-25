@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title description">
   <title id="title">OpenRZ67 PhotoMOS wiring diagram</title>
-  <desc id="description">GPIO4 and GPIO3 drive two TLP172AM input LEDs through 220 ohm resistors. Their isolated outputs close the Mamiya RZ67 S1 and S2 signals to camera ground. The camera 6 volt pin is not connected, and camera ground stays isolated from ESP32 ground.</desc>
+  <desc id="description">GPIO4 and GPIO3 drive two TLP172AM input LEDs through 220 ohm resistors. Their isolated outputs close the Mamiya RZ67 S1 and S2 signals to camera ground. The camera 6 volt pin is wired but unused by the board, and camera ground stays isolated from ESP32 ground.</desc>
   <defs>
     <style>
       text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #17202a; }
@@ -99,7 +99,7 @@
   <circle cx="885" cy="245" r="18" fill="#fff" stroke="#9ba5ad" stroke-width="3"/>
   <text x="885" y="251" text-anchor="middle" class="label">1</text>
   <text x="920" y="241" class="label">6 V</text>
-  <text x="920" y="263" class="small">Do not connect</text>
+  <text x="920" y="263" class="small">Unused by the board</text>
 
   <circle cx="885" cy="280" r="18" fill="#fff" stroke="#337f9c" stroke-width="3"/>
   <text x="885" y="286" text-anchor="middle" class="label">3</text>

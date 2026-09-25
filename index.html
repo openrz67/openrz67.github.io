@@ -167,7 +167,7 @@ footer a:hover{text-decoration:underline}
 <h3>Camera remote port</h3>
 <p>Four pins, viewed from the front of the camera.</p>
 <table><thead><tr><th>Pin</th><th>Signal</th></tr></thead><tbody>
-<tr><td>1</td><td>6 V — do not connect</td></tr>
+<tr><td>1</td><td>6 V — unused by the board</td></tr>
 <tr><td>2</td><td>GND</td></tr>
 <tr><td>3</td><td>S1 switch</td></tr>
 <tr><td>4</td><td>S2 switch</td></tr>
@@ -184,7 +184,7 @@ footer a:hover{text-decoration:underline}
 <div class="warn">For bulb exposures set the shutter dial to <strong>B</strong>. The camera closes the shutter on its own after about 60 seconds regardless.</div>
 </div>
 <figure class="wiring">
-<img src="img/wiring.svg" alt="Wiring diagram: ESP32-C3 GPIO 3 and 4 drive two TLP172AM PhotoMOS relays through 220 ohm resistors; their isolated outputs connect S1 and S2 to camera ground">
+<img src="img/wiring.svg?v=pin1" alt="Wiring diagram: ESP32-C3 GPIO 3 and 4 drive two TLP172AM PhotoMOS relays through 220 ohm resistors; their isolated outputs connect S1 and S2 to camera ground">
 <figcaption>How the two isolated channels reach the camera. On the PCB this is already routed.</figcaption>
 </figure>
 </div>
@@ -209,7 +209,7 @@ footer a:hover{text-decoration:underline}
 <ol class="steps">
 <li><h3>Get a board</h3><p>Order the verified rev 2 from its <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/archive/2026-09-07-rev2">fab package</a>: Gerbers, BOM and pick-and-place exactly as ordered, KiCad source at tag <a href="https://github.com/openrz67/openrz67-trigger/tree/pcb-rev2/pcb/kicad">pcb-rev2</a>. Rev 3 is in <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad/out">pcb/kicad/out</a>, still a work in progress.</p></li>
 <li><h3>Flash the firmware</h3><p>Clone the trigger repo and run <code>pio run -t upload</code> with PlatformIO. That flashes rev 2; for rev 3 use <code>pio run -e rev3 -t upload</code>. Hold BOOT while resetting if upload doesn't start.</p></li>
-<li><h3>Make the cable</h3><p>Four-pin JST XH at the board end; at the camera end, four 2.54 mm Dupont sleeves pushed onto the pins and taped. Leave pin 1 unconnected and double-check orientation before you plug it in. The cell, switch, antenna and connectors are listed in <a href="https://github.com/openrz67/openrz67-trigger/blob/main/BOM.md">BOM.md</a>.</p></li>
+<li><h3>Make the cable</h3><p>Four-pin JST XH at the board end; at the camera end, four 2.54 mm Dupont sleeves pushed onto the pins and taped. Wire all four pins straight through; pin 1 (6 V) ends on a pad the board leaves unconnected. Double-check orientation before you plug it in. The cell, switch, antenna and connectors are listed in <a href="https://github.com/openrz67/openrz67-trigger/blob/main/BOM.md">BOM.md</a>.</p></li>
 <li><h3>Print the case</h3><p>Get the enclosure files and printing instructions from <a href="https://github.com/openrz67/openrz67-trigger/tree/main/case">case/</a> in the trigger repo. Fits rev 2 and rev 3, with the battery under the PCB. Read the case README before printing.</p></li>
 <li><h3>Install the app</h3><p>Grab the APK from <a href="https://github.com/openrz67/openrz67-android/releases/latest">releases</a>. Power on the trigger and the app connects on its own.</p></li>
 </ol>
