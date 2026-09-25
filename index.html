@@ -179,7 +179,7 @@ footer a:hover{text-decoration:underline}
 <tr><td>21 / 20</td><td>Start / end bulb</td></tr>
 <tr><td>31 / 30</td><td>Start / cancel 10 s countdown</td></tr>
 <tr><td>3 n 1</td><td>Countdown of <em>n</em> seconds</td></tr>
-<tr><td colspan="2">Rev 3 boards add a read/notify characteristic with the system voltage in millivolts.</td></tr>
+<tr><td colspan="2">Every board exposes the standard Device Information Service (firmware revision). Rev 3 boards add a read/notify characteristic with the system voltage in millivolts, plus the standard Battery Service (0x180F) with the level in percent.</td></tr>
 </tbody></table>
 <div class="warn">For bulb exposures set the shutter dial to <strong>B</strong>. The camera closes the shutter on its own after about 60 seconds regardless.</div>
 </div>
@@ -205,7 +205,7 @@ footer a:hover{text-decoration:underline}
 <section id="start"><div class="wrap">
 <span class="eyebrow">Get started</span>
 <h2>Build one.</h2>
-<p class="lead">This is a hobby project under active development. As of today, if you want one, you'll have to build one yourself. You can either create your own board, or order a batch of the pre-designed PCBs from JLCPCB. Rev 2 boards are in regular use. Rev 1 is deprecated. The repo has moved on to rev 3 since that batch &mdash; functionally the same board. Read the trigger README before ordering anything.</p>
+<p class="lead">This is a hobby project under active development. As of today, if you want one, you'll have to build one yourself. You can either create your own board, or order a batch of the pre-designed PCBs from JLCPCB. Rev 2 boards are in regular use. Rev 1 is deprecated. The repo has moved on to rev 3 since that batch &mdash; same function, plus battery voltage sensing, a reverse-battery P-FET on the cell input and paste windows on the exposed pads; not yet ordered. Read the trigger README before ordering anything.</p>
 <ol class="steps">
 <li><h3>Get a board</h3><p>Order the PCB from the Gerbers in <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad/out">pcb/kicad/out</a>.</p></li>
 <li><h3>Flash the firmware</h3><p>Clone the trigger repo and run <code>pio run -t upload</code> with PlatformIO. Hold BOOT while resetting if upload doesn't start.</p></li>
