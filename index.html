@@ -114,11 +114,11 @@ footer a:hover{text-decoration:underline}
 </div>
 <div class="hardware">
 <figure>
-<a class="pcb" href="img/case-pcb.png"><img src="img/case-pcb.png" width="1400" height="1400" fetchpriority="high" alt="Exploded CAD view of the OpenRZ67 trigger: white lid with black inlaid lettering and a light pipe above the rev 2 PCB, with the enclosure base below"></a>
-<figcaption>Case + rev 2 PCB · CAD render<br>Battery, switch and wiring omitted.</figcaption>
+<a class="pcb" href="img/case-pcb.png"><img src="img/case-pcb.png?v=rev3" width="1400" height="1400" fetchpriority="high" alt="Exploded CAD view of the OpenRZ67 trigger: white lid with black inlaid lettering and a light pipe above the rev 3 PCB, with the enclosure base below"></a>
+<figcaption>Case + rev 3 PCB · CAD render<br>Battery, switch and wiring omitted.</figcaption>
 </figure>
 <figure>
-<a class="pcb pcb-top" href="img/pcb-top.png"><img src="img/pcb-top.png" width="1400" height="700" alt="Top view of the rev 2 trigger PCB, showing the ESP32-C3, two PhotoMOS relays, USB-C port and camera connector"></a>
+<a class="pcb pcb-top" href="img/pcb-top.png"><img src="img/pcb-top.png?v=rev2" width="1400" height="700" alt="Top view of the rev 2 trigger PCB, showing the ESP32-C3, two PhotoMOS relays, USB-C port and camera connector"></a>
 <figcaption>Rev 2 PCB · top view</figcaption>
 </figure>
 </div>
@@ -137,7 +137,7 @@ footer a:hover{text-decoration:underline}
 <li>KiCad project, Gerbers, BOM and pick-and-place files</li>
 <li>3D-printable enclosure, print-tested and in regular use</li>
 </ul>
-<div class="links"><a href="https://github.com/openrz67/openrz67-trigger">Repository</a><a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad">PCB files</a><a href="https://github.com/openrz67/openrz67-trigger#ble-protocol">BLE protocol</a></div>
+<div class="links"><a href="https://github.com/openrz67/openrz67-trigger">Repository</a><a href="https://github.com/openrz67/openrz67-trigger/blob/main/pcb/kicad/out/openrz67-schematic.pdf">Schematic (PDF)</a><a href="https://github.com/openrz67/openrz67-trigger/blob/main/BOM.md">BOM</a><a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/archive/2026-09-07-rev2">Rev 2 fab files</a><a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad">KiCad source (rev 3)</a><a href="https://github.com/openrz67/openrz67-trigger#ble-protocol">BLE protocol</a><a href="https://github.com/openrz67/openrz67-trigger/issues">Issues</a></div>
 </article>
 <article class="card">
 <div class="top"><h3>openrz67-android</h3><span class="status ok" id="av">v1.1 released</span></div>
@@ -147,13 +147,13 @@ footer a:hover{text-decoration:underline}
 <li>Auto-connect and reconnect over BLE</li>
 <li>APK on the releases page, or build with Gradle</li>
 </ul>
-<div class="links"><a href="https://github.com/openrz67/openrz67-android">Repository</a><a href="https://github.com/openrz67/openrz67-android/releases">Download APK</a></div>
+<div class="links"><a href="https://github.com/openrz67/openrz67-android">Repository</a><a href="https://github.com/openrz67/openrz67-android/releases/latest">Download APK</a><a href="https://github.com/openrz67/openrz67-android/issues">Issues</a></div>
 </article>
 <article class="card plan">
 <div class="top"><h3>openrz67-ios</h3><span class="status plan">planned</span></div>
 <p>An iPhone app speaking the same BLE protocol. Not started yet. If you want to build it, the protocol is a handful of single-byte commands and fully documented.</p>
 <ul><li>Same feature set as the Android app</li><li>Contributions welcome</li></ul>
-<div class="links"><a href="#roadmap">Roadmap</a></div>
+<div class="links"><a href="https://github.com/openrz67/openrz67-trigger#ble-protocol">BLE protocol</a><a href="#roadmap">Roadmap</a></div>
 </article>
 </div>
 </div></section>
@@ -207,11 +207,11 @@ footer a:hover{text-decoration:underline}
 <h2>Build one.</h2>
 <p class="lead">This is a hobby project under active development. As of today, if you want one, you'll have to build one yourself. You can either create your own board, or order a batch of the pre-designed PCBs from JLCPCB. Rev 2 boards are in regular use. Rev 1 is deprecated. The repo has moved on to rev 3 since that batch &mdash; same function, plus battery voltage sensing, a reverse-battery P-FET on the cell input and paste windows on the exposed pads; not yet ordered. Read the trigger README before ordering anything.</p>
 <ol class="steps">
-<li><h3>Get a board</h3><p>Order the PCB from the Gerbers in <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad/out">pcb/kicad/out</a>.</p></li>
-<li><h3>Flash the firmware</h3><p>Clone the trigger repo and run <code>pio run -t upload</code> with PlatformIO. Hold BOOT while resetting if upload doesn't start.</p></li>
+<li><h3>Get a board</h3><p>Order the verified rev 2 from its <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/archive/2026-09-07-rev2">fab package</a>: Gerbers, BOM and pick-and-place exactly as ordered, KiCad source at tag <a href="https://github.com/openrz67/openrz67-trigger/tree/pcb-rev2/pcb/kicad">pcb-rev2</a>. Rev 3 is in <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad/out">pcb/kicad/out</a>, not yet built.</p></li>
+<li><h3>Flash the firmware</h3><p>Clone the trigger repo and run <code>pio run -t upload</code> with PlatformIO. That flashes rev 2; for rev 3 use <code>pio run -e rev3 -t upload</code>. Hold BOOT while resetting if upload doesn't start.</p></li>
 <li><h3>Make the cable</h3><p>Four-pin JST XH at the board end; at the camera end, four Dupont sleeves in a printed clamshell plug (<code>case/camera_plug.py</code>). Leave pin 1 unconnected and double-check orientation before you plug it in. The cell, switch, antenna and connectors are listed in <a href="https://github.com/openrz67/openrz67-trigger/blob/main/BOM.md">BOM.md</a>.</p></li>
-<li><h3>Print the case</h3><p>Get the enclosure files and printing instructions from <a href="https://github.com/openrz67/openrz67-trigger/tree/main/case">case/</a> in the trigger repo. The battery sits under the PCB. The case is print-tested and in regular use. Read the case README before printing.</p></li>
-<li><h3>Install the app</h3><p>Grab the APK from <a href="https://github.com/openrz67/openrz67-android/releases">releases</a>. Power on the trigger and the app connects on its own.</p></li>
+<li><h3>Print the case</h3><p>Get the enclosure files and printing instructions from <a href="https://github.com/openrz67/openrz67-trigger/tree/main/case">case/</a> in the trigger repo. The battery sits under the PCB. Drawn for rev 2; rev 3 keeps the same outline, holes and connector positions. The case is print-tested and in regular use. Read the case README before printing.</p></li>
+<li><h3>Install the app</h3><p>Grab the APK from <a href="https://github.com/openrz67/openrz67-android/releases/latest">releases</a>. Power on the trigger and the app connects on its own.</p></li>
 </ol>
 </div></section>
 
@@ -220,6 +220,7 @@ footer a:hover{text-decoration:underline}
 <h2>Where it's heading.</h2>
 <ul class="road">
 <li><span class="status ok">done</span><div><strong>Rev 2 in regular use</strong><p>PhotoMOS relays instead of mechanical, side-entry camera connector, BQ25185 charger and TPS63031 buck-boost. Tested on USB and battery, September 2026.</p></div></li>
+<li><span class="status wip">in progress</span><div><strong>Rev 3</strong><p>Battery voltage sensing with the standard Battery Service, a reverse-battery P-FET on the cell input and paste windows on the exposed pads. Designed and in the repo, not yet ordered.</p></div></li>
 <li><span class="status ok">done</span><div><strong>Print-tested enclosure</strong><p>Stacked snap-fit case with the cell under the PCB. In regular use, with minor refinements ongoing.</p></div></li>
 <li><span class="status plan">planned</span><div><strong>iOS app</strong><p>Same protocol, same three modes. Open to contributors.</p></div></li>
 <li><span class="status plan">ideas</span><div><strong>More of the RZ67 system</strong><p>The remote port is only the first thing on this camera worth opening up.</p></div></li>
