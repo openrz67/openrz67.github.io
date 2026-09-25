@@ -109,7 +109,7 @@ footer a:hover{text-decoration:underline}
 <div>
 <span class="badge">Working prototype · open source · MIT</span>
 <h1 id="h">Remote release for the <em>Mamiya RZ67</em>, without the cable.</h1>
-<p class="lead">A tiny Bluetooth trigger that plugs into the RZ67's electrical remote port, and an Android app to fire it. Instant shutter, bulb exposures and self-timer countdowns, all from your phone. Rev 2 is in regular use and shooting film. Rev 1 is deprecated.</p>
+<p class="lead">A tiny Bluetooth trigger that plugs into the RZ67's electrical remote port, and an Android app to fire it. Instant shutter, bulb exposures and self-timer countdowns, all from your phone. Rev 2 is in regular use and shooting film.</p>
 <div class="cta"><a class="btn p" href="#start">Get started</a><a class="btn" href="https://github.com/openrz67">View on GitHub</a></div>
 </div>
 <div class="hardware">
@@ -205,12 +205,12 @@ footer a:hover{text-decoration:underline}
 <section id="start"><div class="wrap">
 <span class="eyebrow">Get started</span>
 <h2>Build one.</h2>
-<p class="lead">This is a hobby project under active development. As of today, if you want one, you'll have to build one yourself. You can either create your own board, or order a batch of the pre-designed PCBs from JLCPCB. Rev 2 boards are in regular use. Rev 1 is deprecated. The repo has moved on to rev 3 since that batch &mdash; same function, plus battery voltage sensing, a reverse-battery P-FET on the cell input and paste windows on the exposed pads; not yet ordered. Read the trigger README before ordering anything.</p>
+<p class="lead">A hobby project, so there is nothing to buy: you build one yourself, with the board made by JLCPCB. Read the trigger README before ordering.</p>
 <ol class="steps">
-<li><h3>Get a board</h3><p>Order the verified rev 2 from its <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/archive/2026-09-07-rev2">fab package</a>: Gerbers, BOM and pick-and-place exactly as ordered, KiCad source at tag <a href="https://github.com/openrz67/openrz67-trigger/tree/pcb-rev2/pcb/kicad">pcb-rev2</a>. Rev 3 is in <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad/out">pcb/kicad/out</a>, not yet built.</p></li>
+<li><h3>Get a board</h3><p>Order the verified rev 2 from its <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/archive/2026-09-07-rev2">fab package</a>: Gerbers, BOM and pick-and-place exactly as ordered, KiCad source at tag <a href="https://github.com/openrz67/openrz67-trigger/tree/pcb-rev2/pcb/kicad">pcb-rev2</a>. Rev 3 is in <a href="https://github.com/openrz67/openrz67-trigger/tree/main/pcb/kicad/out">pcb/kicad/out</a>, still a work in progress.</p></li>
 <li><h3>Flash the firmware</h3><p>Clone the trigger repo and run <code>pio run -t upload</code> with PlatformIO. That flashes rev 2; for rev 3 use <code>pio run -e rev3 -t upload</code>. Hold BOOT while resetting if upload doesn't start.</p></li>
-<li><h3>Make the cable</h3><p>Four-pin JST XH at the board end; at the camera end, four Dupont sleeves in a printed clamshell plug (<code>case/camera_plug.py</code>). Leave pin 1 unconnected and double-check orientation before you plug it in. The cell, switch, antenna and connectors are listed in <a href="https://github.com/openrz67/openrz67-trigger/blob/main/BOM.md">BOM.md</a>.</p></li>
-<li><h3>Print the case</h3><p>Get the enclosure files and printing instructions from <a href="https://github.com/openrz67/openrz67-trigger/tree/main/case">case/</a> in the trigger repo. The battery sits under the PCB. Drawn for rev 2; rev 3 keeps the same outline, holes and connector positions. The case is print-tested and in regular use. Read the case README before printing.</p></li>
+<li><h3>Make the cable</h3><p>Four-pin JST XH at the board end; at the camera end, four 2.54 mm Dupont sleeves pushed onto the pins and taped. Leave pin 1 unconnected and double-check orientation before you plug it in. The cell, switch, antenna and connectors are listed in <a href="https://github.com/openrz67/openrz67-trigger/blob/main/BOM.md">BOM.md</a>.</p></li>
+<li><h3>Print the case</h3><p>Get the enclosure files and printing instructions from <a href="https://github.com/openrz67/openrz67-trigger/tree/main/case">case/</a> in the trigger repo. Fits rev 2 and rev 3, with the battery under the PCB. Read the case README before printing.</p></li>
 <li><h3>Install the app</h3><p>Grab the APK from <a href="https://github.com/openrz67/openrz67-android/releases/latest">releases</a>. Power on the trigger and the app connects on its own.</p></li>
 </ol>
 </div></section>
@@ -220,7 +220,7 @@ footer a:hover{text-decoration:underline}
 <h2>Where it's heading.</h2>
 <ul class="road">
 <li><span class="status ok">done</span><div><strong>Rev 2 in regular use</strong><p>PhotoMOS relays instead of mechanical, side-entry camera connector, BQ25185 charger and TPS63031 buck-boost. Tested on USB and battery, September 2026.</p></div></li>
-<li><span class="status wip">in progress</span><div><strong>Rev 3</strong><p>Battery voltage sensing with the standard Battery Service, a reverse-battery P-FET on the cell input and paste windows on the exposed pads. Designed and in the repo, not yet ordered.</p></div></li>
+<li><span class="status wip">in progress</span><div><strong>Rev 3</strong><p>Safer battery handling, battery level reporting and general board refinements.</p></div></li>
 <li><span class="status ok">done</span><div><strong>Print-tested enclosure</strong><p>Stacked snap-fit case with the cell under the PCB. In regular use, with minor refinements ongoing.</p></div></li>
 <li><span class="status plan">planned</span><div><strong>iOS app</strong><p>Same protocol, same three modes. Open to contributors.</p></div></li>
 <li><span class="status plan">ideas</span><div><strong>More of the RZ67 system</strong><p>The remote port is only the first thing on this camera worth opening up.</p></div></li>
