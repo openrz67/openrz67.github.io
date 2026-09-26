@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Support · openrz67</title>
+<meta name="description" content="Help and contact for the openrz67 iOS and Android apps.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%231b1b1b'/><circle cx='16' cy='16' r='7' fill='%23c8402d'/></svg>">
+<style>
+:root{--bg:#f4efe6;--bg2:#eae3d6;--ink:#1b1b1b;--mute:#5f5a52;--line:#d6cdbd;--acc:#c8402d;--acc2:#a3321f;--s:clamp(1rem,3vw,2rem);font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);line-height:1.6;font-size:clamp(1rem,.95rem + .3vw,1.125rem)}
+a{color:inherit;text-decoration-color:var(--acc);text-decoration-thickness:1.5px;text-underline-offset:3px}
+a:hover{color:var(--acc2)}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:3px}
+code{font:.85em/1.5 ui-monospace,"SF Mono",Menlo,monospace;background:var(--bg2);padding:.1em .4em;border-radius:4px}
+.wrap{width:min(720px,100% - 2*var(--s));margin-inline:auto}
+header{border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;gap:1.25rem;height:3.75rem}
+.logo{font-weight:700;font-size:1.25rem;text-decoration:none;display:flex;align-items:center;gap:.5rem;margin-right:auto}
+.logo i{width:.75em;height:.75em;border-radius:50%;background:radial-gradient(circle,var(--acc) 42%,var(--ink) 46%)}
+nav a:not(.logo){text-decoration:none;color:var(--mute);font-size:.95rem}
+main{padding-block:clamp(2.5rem,7vw,5rem)}
+.eyebrow{display:block;font:600 .75rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:1rem}
+h1{font-size:clamp(2rem,1.5rem + 2.5vw,3rem);line-height:1.12;font-weight:600;margin-bottom:1rem}
+h2{font-size:1.3rem;font-weight:600;margin:2.25rem 0 .5rem}
+p,li{max-width:62ch}
+p+p,ul{margin-top:.75rem}
+ul{padding-left:1.2rem}
+li+li{margin-top:.4rem}
+.lead{color:var(--mute);font-size:1.1em}
+footer{border-top:1px solid var(--line);padding-block:2.5rem;color:var(--mute);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+footer a{text-decoration:none}
+</style>
+</head>
+<body>
+<header><nav class="wrap" aria-label="Main">
+<a class="logo" href="./"><i aria-hidden="true"></i>openrz67</a>
+<a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="https://github.com/openrz67">GitHub</a>
+</nav></header>
+
+<main class="wrap">
+<span class="eyebrow">Support</span>
+<h1>Help with the openrz67 apps.</h1>
+<p class="lead">The apps control the openrz67 trigger, a Bluetooth remote release you build yourself for the Mamiya RZ67. They need the trigger to do anything; see <a href="./#start">Get started</a> for how to build one.</p>
+
+<h2>The app stays on &ldquo;Scanning for devices&rdquo;</h2>
+<ul>
+<li>Check that the trigger is switched on. A slow, soft blue pulse means it is on and waiting for a phone.</li>
+<li>Check that Bluetooth is on and that the app is allowed to use it. On iPhone: Settings &rarr; Apps &rarr; OpenRZ67 &rarr; Bluetooth (on iOS 17: Settings &rarr; OpenRZ67).</li>
+<li>The trigger talks to one phone at a time. Close the app on any other phone that is connected to it.</li>
+</ul>
+
+<h2>The connection dropped</h2>
+<p>The app reconnects on its own when the trigger comes back in range; the status line says &ldquo;Waiting for trigger&rdquo; meanwhile. <strong>Reconnect</strong> makes the app forget the trigger and scan again, which helps if you switched to a different one.</p>
+
+<h2>The shutter does not fire</h2>
+<ul>
+<li>A dim, steady blue LED means the trigger is connected. It lights fully while it holds the release.</li>
+<li>Check the camera cable and that pin 1 is the right way round at both ends.</li>
+</ul>
+
+<h2>Bulb mode takes a normal picture</h2>
+<p>The trigger only holds the release. Set the shutter-speed dial on the camera to <code>B</code>, or it takes one exposure at the dialled speed. The camera closes the shutter by itself after about 60 seconds.</p>
+
+<h2>Contact</h2>
+<p>Report bugs and ask questions in the issue tracker for <a href="https://github.com/openrz67/openrz67-ios/issues">the iOS app</a>, <a href="https://github.com/openrz67/openrz67-android/issues">the Android app</a> or <a href="https://github.com/openrz67/openrz67-trigger/issues">the trigger</a>.</p>
+</main>
+
+<footer><div class="wrap">
+<span>openrz67 · MIT licensed · not affiliated with Mamiya</span>
+<span><a href="https://github.com/openrz67">github.com/openrz67</a> · <a href="https://github.com/openrz67/openrz67.github.io">edit this page</a></span>
+</div></footer>
+</body>
+</html>
