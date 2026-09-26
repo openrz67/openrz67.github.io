@@ -109,7 +109,7 @@ footer a:hover{text-decoration:underline}
 <div>
 <span class="badge">Working prototype · open source · MIT</span>
 <h1 id="h">Remote release for the <em>Mamiya RZ67</em>, without the cable.</h1>
-<p class="lead">A tiny Bluetooth trigger that plugs into the RZ67's electrical remote port, and an Android app to fire it. Instant shutter, bulb exposures and self-timer countdowns, all from your phone. Rev 2 is in regular use and shooting film.</p>
+<p class="lead">A tiny Bluetooth trigger that plugs into the RZ67's electrical remote port, and a phone app to fire it: Android now, iPhone in progress. Instant shutter, bulb exposures and self-timer countdowns, all from your phone. Rev 2 is in regular use and shooting film.</p>
 <div class="cta"><a class="btn p" href="#start">Get started</a><a class="btn" href="https://github.com/openrz67">View on GitHub</a></div>
 </div>
 <div class="hardware">
@@ -149,11 +149,15 @@ footer a:hover{text-decoration:underline}
 </ul>
 <div class="links"><a href="https://github.com/openrz67/openrz67-android">Repository</a><a href="https://github.com/openrz67/openrz67-android/releases/latest">Download APK</a><a href="https://github.com/openrz67/openrz67-android/issues">Issues</a></div>
 </article>
-<article class="card plan">
-<div class="top"><h3>openrz67-ios</h3><span class="status plan">planned</span></div>
-<p>An iPhone app speaking the same BLE protocol. Not started yet. If you want to build it, the protocol is a handful of single-byte commands and fully documented.</p>
-<ul><li>Same feature set as the Android app</li><li>Contributions welcome</li></ul>
-<div class="links"><a href="https://github.com/openrz67/openrz67-trigger#ble-protocol">BLE protocol</a><a href="#roadmap">Roadmap</a></div>
+<article class="card">
+<div class="top"><h3>openrz67-ios</h3><span class="status wip">in progress</span></div>
+<p>Companion app for iPhone, written in SwiftUI. Same three modes as the Android app. Not in the App Store yet; build it from source in Xcode. Tested on an Apple silicon Mac so far, not yet on an iPhone.</p>
+<ul>
+<li>Shutter, bulb and countdown with custom duration</li>
+<li>Auto-connect and reconnect over BLE</li>
+<li>Build with Xcode 26, runs on iOS 17 or later</li>
+</ul>
+<div class="links"><a href="https://github.com/openrz67/openrz67-ios">Repository</a><a href="https://github.com/openrz67/openrz67-ios/issues">Issues</a></div>
 </article>
 </div>
 </div></section>
@@ -211,7 +215,7 @@ footer a:hover{text-decoration:underline}
 <li><h3>Flash the firmware</h3><p>Clone the trigger repo and run <code>pio run -t upload</code> with PlatformIO. That flashes rev 2; for rev 3 use <code>pio run -e rev3 -t upload</code>. Hold BOOT while resetting if upload doesn't start.</p></li>
 <li><h3>Make the cable</h3><p>Four-pin JST XH at the board end; at the camera end, four 2.54 mm Dupont sleeves pushed onto the pins and taped. Wire all four pins straight through; pin 1 (6 V) ends on a pad the board leaves unconnected. Double-check orientation before you plug it in. The cell, switch, antenna and connectors are listed in <a href="https://github.com/openrz67/openrz67-trigger/blob/main/BOM.md">BOM.md</a>.</p></li>
 <li><h3>Print the case</h3><p>Get the enclosure files and printing instructions from <a href="https://github.com/openrz67/openrz67-trigger/tree/main/case">case/</a> in the trigger repo. Fits rev 2 and rev 3, with the battery under the PCB. Read the case README before printing.</p></li>
-<li><h3>Install the app</h3><p>Grab the APK from <a href="https://github.com/openrz67/openrz67-android/releases/latest">releases</a>. Power on the trigger and the app connects on its own.</p></li>
+<li><h3>Install the app</h3><p>Grab the APK from <a href="https://github.com/openrz67/openrz67-android/releases/latest">releases</a>. Power on the trigger and the app connects on its own. On iPhone, build <a href="https://github.com/openrz67/openrz67-ios">openrz67-ios</a> in Xcode until it is in the App Store.</p></li>
 </ol>
 </div></section>
 
@@ -222,7 +226,7 @@ footer a:hover{text-decoration:underline}
 <li><span class="status ok">done</span><div><strong>Rev 2 in regular use</strong><p>PhotoMOS relays instead of mechanical, side-entry camera connector, BQ25185 charger and TPS63031 buck-boost. Tested on USB and battery, September 2026.</p></div></li>
 <li><span class="status wip">in progress</span><div><strong>Rev 3</strong><p>Safer battery handling, battery level reporting and general board refinements.</p></div></li>
 <li><span class="status ok">done</span><div><strong>Print-tested enclosure</strong><p>Stacked snap-fit case with the cell under the PCB. In regular use, with minor refinements ongoing.</p></div></li>
-<li><span class="status plan">planned</span><div><strong>iOS app</strong><p>Same protocol, same three modes. Open to contributors.</p></div></li>
+<li><span class="status wip">in progress</span><div><strong>iOS app</strong><p>SwiftUI app with the same three modes, working against the trigger. Next: testing on an iPhone and an App Store release.</p></div></li>
 <li><span class="status plan">ideas</span><div><strong>More of the RZ67 system</strong><p>The remote port is only the first thing on this camera worth opening up.</p></div></li>
 </ul>
 </div></section>
